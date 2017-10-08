@@ -1,6 +1,197 @@
 <!DOCTYPE html>
-<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的博客</title>
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <!-- 引入Vue -->
+    <script src="iview/vue.min.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="iview/iview.css">
+    <!-- 引入组件库 -->
+    <script src="iview/iview.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="lib/jquery-3.2.1.min.js"></script>
+</head>
 <body>
-<h1>这是我使用github pages搭建的个人站点。</h1>
+
+    <div id="app">
+        <!--加载动画-->
+        <div class="loading">
+            <Spin size="large" fix v-if="spinShow"></Spin>
+        </div>
+        <div class="goTop" hidden onclick="goTop()"><img src="img/goTop.png"></div>
+        <div class="content" hidden>
+            <!--头部-->
+            <div class="header">
+                <!--用户信息-->
+                <div class="user_info">
+                    <img  src="img/icon.png">
+                    <span>码农</span>
+                </div>
+                <!--顶级菜单组-->
+                <div class="menu_group">
+                    <span>首页</span>
+                    <span>关于</span>
+                </div>
+                <!--用户信息分割线-->
+                <div class="user_bottom"></div>
+                <div class="user_title">用心做一名优秀的程序员</div>
+
+                <div class="group">
+                    <div><img class="group_github" src="img/github.png"><br>github</div>
+                    <div><img class="group_csdn" src="img/CSDN.png"><br>csdn</div>
+                    <div><img class="group_me" src="img/me.png"><br>me</div>
+                </div>
+
+            </div>
+            <!--内容区域-->
+            <div class="body">
+
+                <div class="item">
+                    <div><span class="item_type">[原创]</span><span class="item_title">Stroll网络访问框架</span><span class="item_date">2017-09-17</span></div>
+                    <div class="item_title_bottom"></div>
+                    <div class="item_content"><p>主题采用codestar-framework-1.0.1后台内核，支持wordpress 最新版本 4.8.3-zh_CN，且完美响应式支持手机自适应。</p></div>
+                </div>
+
+                <div class="item">
+                    <div><span class="item_type">[原创]</span><span class="item_title">Stroll网络访问框架</span><span class="item_date">2017-09-17</span></div>
+                    <div class="item_title_bottom"></div>
+                    <div class="item_content"><p>主题采用codestar-framework-1.0.1后台内核，支持wordpress 最新版本 4.8.3-zh_CN，且完美响应式支持手机自适应。</p></div>
+                </div>
+
+                <div class="item">
+                    <div><span class="item_type">[原创]</span><span class="item_title">Stroll网络访问框架</span><span class="item_date">2017-09-17</span></div>
+                    <div class="item_title_bottom"></div>
+                    <div class="item_content"><p>主题采用codestar-framework-1.0.1后台内核，支持wordpress 最新版本 4.8.3-zh_CN，且完美响应式支持手机自适应。</p></div>
+                </div>
+
+                <div class="item">
+                    <div><span class="item_type">[原创]</span><span class="item_title">Stroll网络访问框架</span><span class="item_date">2017-09-17</span></div>
+                    <div class="item_title_bottom"></div>
+                    <div class="item_content"><p>主题采用codestar-framework-1.0.1后台内核，支持wordpress 最新版本 4.8.3-zh_CN，且完美响应式支持手机自适应。</p></div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
 </body>
+
+<script>
+    //获取界面显示的高度
+    var mHeight = window.innerHeight;
+    //设置页面的高度
+    $('#app').css('height',mHeight+'px');
+    var mHeight_Header = parseInt($('.header').css('height').split('p')[0]);
+    $('.body').css('height',(mHeight-mHeight_Header)+'px');
+    var vue = new Vue({
+        el:"#app",
+        data:{
+            spinShow: true
+        },
+        method:{
+
+        }
+    });
+
+    setTimeout(function () {
+        document.getElementsByClassName('content')[0].removeAttribute('hidden');
+        vue.spinShow = false;
+    },2000);
+    var mWidth = window.innerWidth;
+    var mGroup = $('.group');
+    var groupTop = parseInt(mGroup.css('top').split("p")[0]);
+    var isFixed = false;
+    var isAbsolute = false;
+    window.onscroll = function() {
+
+        if (mWidth < 720 ){
+            showTop(100);
+            if (window.scrollY <=100){
+                $('.goTop').attr('hidden',true);
+            }else {
+                $('.goTop').attr('hidden',false);
+            }
+            if(window.scrollY >= 100){
+                fixedGroup();
+                isFixed = true;
+                isAbsolute = false;
+            }else {
+                absoluteGroup();
+                isFixed = false;
+                isAbsolute = true;
+            }
+        } else if (mWidth <1080){
+            showTop(150);
+            if(window.scrollY >= 150){
+                fixedGroup();
+                isFixed = true;
+                isAbsolute = false;
+            }else {
+                absoluteGroup();
+                isFixed = false;
+                isAbsolute = true;
+            }
+        }else {
+            showTop(200);
+            if(window.scrollY >= 200){
+                fixedGroup();
+                isFixed = true;
+                isAbsolute = false;
+            }else {
+                absoluteGroup();
+                isFixed = false;
+                isAbsolute = true;
+            }
+        }
+    };
+
+    /**
+     * 固定组
+     */
+    function fixedGroup() {
+        if (isFixed)return;
+        console.log("固定高度");
+        mGroup.css('position','fixed');
+        var nTop = groupTop - 100;
+        mGroup.css('top',20+'px');
+        mGroup.css('background-color','#2D6CF0');
+        mGroup.css('color','#FFFFFF');
+        $('.group_github').attr('src','img/github_w.png');
+        $('.group_csdn').attr('src','img/CSDN_w.png');
+        $('.group_me').attr('src','img/me_w.png');
+    }
+
+    /**
+     * 不固定组
+     */
+    function absoluteGroup() {
+        if (isAbsolute)return;
+        console.log("释放高度");
+        mGroup.css('position','absolute');
+        mGroup.css('top',groupTop+'px');
+        mGroup.css('background-color','#FFFFFF');
+        mGroup.css('color','#666666');
+        $('.group_github').attr('src','img/github.png');
+        $('.group_csdn').attr('src','img/CSDN.png');
+        $('.group_me').attr('src','img/me.png');
+    }
+
+    function showTop(value) {
+        if (window.scrollY <= value){
+            $('.goTop').attr('hidden',true);
+        }else {
+            $('.goTop').attr('hidden',false);
+        }
+    }
+
+    /**
+     * 返回顶部
+     */
+    function goTop() {
+        window.scrollTo(0,0);
+    }
+</script>
 </html>
