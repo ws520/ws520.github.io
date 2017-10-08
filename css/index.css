@@ -152,6 +152,7 @@
         height: 40px;
         bottom: 50px;
         right: 50px;
+        z-index: 999;
     }
     .goTop img{
         background-size: cover;
@@ -281,6 +282,7 @@
         line-height: 25px;
     }
     .goTop{
+        z-index: 999;
         cursor: pointer;
         position: fixed;
         width: 50px;
@@ -418,6 +420,7 @@
     }
 
     .goTop{
+        z-index: 999;
         cursor: pointer;
         position: fixed;
         width: 50px;
