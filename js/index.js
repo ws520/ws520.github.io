@@ -141,12 +141,13 @@ function toast(msg) {
 }
 
 /**
+ * //数据在码云上存储
  * 获取数据
  */
 function init() {
-    httpClient.setBaseUrl("https://raw.githubusercontent.com/")
+    httpClient.setBaseUrl("https://gitee.com/")
         .build()
-        .doGet("ws520/blog_api/master/data.json",
+        .doGet("null_398_2981/blog_api/raw/master/data.json",
             function (response) {
                 const data = response.data;
                 if (data.code === 100){
@@ -161,6 +162,8 @@ function init() {
 
             },function (e) {
                 toast("加载失败");
+                document.getElementsByClassName('content')[0].removeAttribute('hidden');
+                vue.spinShow = false;
                 //TODO:去404页面
             });
 }

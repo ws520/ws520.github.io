@@ -190,17 +190,17 @@ const desc = "欢迎您的到来，阅读后有什么建议请联系我。我的
 /**
  * 获取文本数据
  * @param api
+ * https://gitee.com/null_398_2981/blog_api/raw/master/test.md
  */
 function fatchData(api) {
-    log("开始获取数据:  https://raw.githubusercontent.com/"+api);
-    new HttpClient().setBaseUrl("https://raw.githubusercontent.com/")
+    log("开始获取数据:  https://gitee.com/"+api);
+    new HttpClient().setBaseUrl("https://gitee.com/")
         .build()
         .doGet(api,
             function (response) {
                 log("结果：");
                 toast("加载完成");
                 const data = response.data;
-
                 document.getElementsByClassName('content')[0].removeAttribute('hidden');
                 vue.spinShow = false;
                 // if (data.code === 100){
