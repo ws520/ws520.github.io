@@ -21,6 +21,9 @@
     width: 100%;
     height: 100%;
 }
+.item_title{
+    cursor: pointer;
+}
 
 @media screen and (min-width: 320px){
     .header{
@@ -153,6 +156,8 @@
         bottom: 50px;
         right: 50px;
         z-index: 999;
+        background-color: #FFFFFF;
+        border-radius: 15px;
     }
     .goTop img{
         background-size: cover;

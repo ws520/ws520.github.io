@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="icon" href="img/icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <script src="lib/jquery-3.2.1.min.js"></script>
+    <!-- 引入Vue -->
+    <script src="https://vuejs.org/js/vue.min.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/iview/dist/styles/iview.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/iview/dist/iview.min.js"></script>
+
+    <!-- 引入Vue -->
+    <script src="iview/vue.min.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="iview/iview.css">
+    <!-- 引入组件库 -->
+    <script src="iview/iview.min.js"></script>
+
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="lib/axios.min.js"></script>
+    <script src="lib/httpClient.js"></script>
+    <script src="lib/Markdown.Converter.js"></script>
+    <script src="lib/Base64.js"></script>
+    <link rel="stylesheet" href="css/Xcode.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+
+<div id="app">
+    <!--加载动画-->
+    <div class="loading">
+        <Spin size="large" fix v-if="spinShow"></Spin>
+    </div>
+    <div class="goTop" hidden onclick="goTop()"><img src="img/goTop.png"></div>
+    <div class="content" hidden>
+        <!--头部-->
+        <div class="header">
+            <!--用户信息-->
+            <div class="user_info">
+                <img  src="img/icon.png">
+                <span>码农</span>
+            </div>
+            <!--顶级菜单组-->
+            <div class="menu_group">
+                <span @click="goIndex">首页</span>
+                <span @click="about">关于</span>
+            </div>
+            <!--用户信息分割线-->
+            <div class="user_bottom"></div>
+            <div class="user_title">用心做一名优秀的程序员</div>
+            <!--按钮组-->
+            <div class="group">
+                <div @click="github"><img class="group_github" src="img/github.png"><br>github</div>
+                <div @click="csdn"><img class="group_csdn" src="img/CSDN.png"><br>csdn</div>
+                <div @click="me"><img class="group_me" src="img/me.png"><br>me</div>
+            </div>
+
+        </div>
+        <!--内容区域-->
+        <div class="body" v-html="marked(vue.data)" v-highlight></div>
+    </div>
+</div>
+</body>
+<script src="js/content.js"></script>
+
+
+
+
+
+</html>
