@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="548510f4-a32a-48ce-a174-0873a9eec546" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content.html" afterPath="$PROJECT_DIR$/content.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/res/util.js" afterPath="$PROJECT_DIR$/src/res/util.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/res/css/index.css" afterPath="$PROJECT_DIR$/src/res/css/index.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,11 +17,21 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
+            <state relative-caret-position="234">
               <caret line="66" column="12" lean-forward="false" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="12" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/res/css/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -47,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="content.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="content.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/content.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-550">
-              <caret line="67" column="8" lean-forward="false" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="8" />
+            <state relative-caret-position="259">
+              <caret line="72" column="31" lean-forward="false" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="31" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -114,9 +123,10 @@
         <option value="$PROJECT_DIR$/404.html" />
         <option value="$PROJECT_DIR$/me.html" />
         <option value="$PROJECT_DIR$/src/assets/data.json" />
-        <option value="$PROJECT_DIR$/content.html" />
         <option value="$PROJECT_DIR$/src/res/util.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/content.html" />
+        <option value="$PROJECT_DIR$/src/res/css/index.css" />
       </list>
     </option>
   </component>
@@ -141,7 +151,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-24" />
+    <option name="x" value="9" />
     <option name="y" value="23" />
     <option name="width" value="1400" />
     <option name="height" value="812" />
@@ -212,6 +222,13 @@
               <item name="ws520.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ws520.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ws520.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -345,15 +362,15 @@
       <workItem from="1507481420179" duration="2000" />
       <workItem from="1507513924222" duration="2979000" />
       <workItem from="1507520200918" duration="18229000" />
-      <workItem from="1507694657274" duration="3150000" />
+      <workItem from="1507694657274" duration="3451000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24360000" />
+    <option name="totallyTimeSpent" value="24661000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-24" y="23" width="1400" height="812" extended-state="0" />
+    <frame x="9" y="23" width="1400" height="812" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -460,9 +477,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="72" column="31" lean-forward="false" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="31" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
+        <state relative-caret-position="234">
           <caret line="66" column="12" lean-forward="false" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="12" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -470,13 +497,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content.html">
+    <entry file="file://$PROJECT_DIR$/src/res/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-550">
-          <caret line="67" column="8" lean-forward="false" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="8" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="50">
+          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
