@@ -33,7 +33,7 @@
         <h2 class="home" @click="goHome">首页</h2>
         <h2 class="about" @click="about">关于</h2>
     </div>
-    <div class="header" style="background-image: url('src/res/drawable/header_bg.png')">
+    <div class="header" >
         努力做一名合格的程序员
     </div>
     <div class="float_menus">
@@ -81,6 +81,7 @@
             //获取md文本
 
             fatchData: function(api) {
+                $('.header').style.backgroundImage = baseUrl+'src/res/drawable/header_bg.png';
                 axios.create({baseURL: baseUrl}).get('src/assets/'+api)
                     .then(function(response){
                         this.showloading = false;
