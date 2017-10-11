@@ -245,5 +245,6 @@
     height: auto;
 }
 .content a{
-    overflow: scroll;
+    max-width: 80%;
+    overflow: hidden;
 }
