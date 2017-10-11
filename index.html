@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
+<html lang="en">
 <head>
-    <title>博客</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-    <link rel="stylesheet" href="dist/main.css">
+    <title>博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- 引入Vue -->
+    <script src="//vuejs.org/js/vue.min.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css">
+    <!-- 引入组件库 -->
+    <script src="//unpkg.com/iview/dist/iview.min.js"></script>
+    <link rel="stylesheet" href="src/res/css/index.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://gitee.com/null_398_2981/waws80.github.io/raw/master/js/marked.js"></script>
     <script src="https://gitee.com/null_398_2981/waws80.github.io/raw/master/Base64.js"></script>
@@ -15,11 +20,117 @@
     <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 </head>
-
 <body>
-    <div id="app"></div>
-    <script type="text/javascript" src="dist/vendors.js"></script>
-    <script type="text/javascript" src="dist/main.js"></script>
-</body>
 
+    <div id="app">
+        <div class="actionBar">
+            <div class="navigation">
+                <img src="src/res/drawable/icon.png"/>
+                &nbsp;{{username}}
+            </div>
+            <h2 class="about" @click="about">关于</h2>
+        </div>
+        <div class="header" style="background-image: url('src/res/drawable/header_bg.png')">
+            努力做一名合格的程序员
+        </div>
+        <div class="float_menus">
+            <div class="menu_item">
+                <img src="src/res/drawable/github.png" @click="goGitHub"/>
+            </div>
+            <div class="menu_item">
+                <img src="src/res/drawable/CSDN.png" @click="goCSDN"/>
+            </div>
+            <div class="menu_item">
+                <img src="src/res/drawable/me.png" @click="goMe"/>
+            </div>
+        </div>
+        <div class="content">
+            <div class="demo-spin-container" v-if="showloading">
+                <Spin size="large" fix></Spin>
+            </div>
+            <div class="topline"></div>
+            <div class="item" v-for="item in data ">
+                <div class="item_top">
+                    <span class="item_type">{{item.type}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span class="item_title" @click="itemClick(item.url)">{{item.title}}</span>
+                </div>
+                <div class="item_baseline"></div>
+                <div class="item_temp">{{item.temp}}</div>
+                <div class="item_bottomline"></div>
+            </div>
+        </div>
+        <div class="layout-copy">
+            Copyright &copy; 2017-2018 &nbsp; &nbsp; 陕ICP备17003857号
+        </div>
+        <!--返回顶部-->
+        <Back-top :height="100" :bottom="100">
+            <div class="top">返回顶端</div>
+        </Back-top>
+    </div>
+    <script>
+        const vue = new Vue({
+            el: '#app',
+            data: {
+                showloading: false,
+                username: 'Thanatos',
+                aboutinfo: '',
+                githubUrl: 'https://github.com/ws520',
+                csdnUrl: 'http://blog.csdn.net/qq_16070781',
+                meUrl: 'https://www.baidu.com',
+                data: ''
+            },
+            methods: {
+                about: function () {
+//                    this.info({
+//                        title: '关于',
+//                        content: this.aboutinfo
+//                    });
+                },
+                goGitHub: function () {
+                    location.href = this.githubUrl;
+                },
+                goCSDN: function () {
+                    location.href = this.csdnUrl;
+                },
+                goMe: function () {
+                    location.href = this.meUrl;
+                },
+                itemClick: function(api){
+                    console.log(api);
+                    const a = Base.encode(api);
+                    //this.$router.push('/content.html?api='+a);
+                    location.href = 'content.html?api='+a;
+                }
+            }
+        });
+        const baseurl = 'http://localhost:8080/blog';
+        fatchData();
+        function fatchData() {
+            //获取文章列表信息
+            axios.create({baseURL: baseurl}).get('/src/assets/data.json')
+                .then(function (response) {
+                    console.log(response.data);
+                    vue.showloading = false;
+                    const info = response.data;
+                    if (info.code === 100) {
+                        vue.data = info.data;
+                    } else {
+                        //TODO:404
+                    }
+                }).catch(function () {
+                vue.showloading = false;
+            });
+
+            //获取关于信息
+            axios.create({baseURL: baseurl}).get('/src/assets/aboutinfo.txt')
+                .then(function (response) {
+                    vue.showloading = false;
+                    vue.aboutinfo = response.data;
+                }).then(function () {
+                vue.showloading = false;
+            });
+        }
+    </script>
+
+</body>
 </html>
