@@ -75,6 +75,8 @@
 
 }
 .layout-copy{
+    position: absolute;
+    bottom: 0;
     background: #5b6270;
     width: 100%;
     text-align: center;
