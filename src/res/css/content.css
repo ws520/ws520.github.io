@@ -245,8 +245,7 @@
     height: auto;
 }
 .content a{
-    display: block;
-    max-width: 80%;
-    overflow: hidden;
-    text-wrap:normal;
+
+    max-width: 100%;
+    word-wrap : break-word ;
 }
