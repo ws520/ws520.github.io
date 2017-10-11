@@ -33,7 +33,7 @@
         <h2 class="home" @click="goHome">首页</h2>
         <h2 class="about" @click="about">关于</h2>
     </div>
-    <div class="header" >
+    <div class="header" style="background-image: image('/src/res/drawable/header_bg.png')">
         努力做一名合格的程序员
     </div>
     <div class="float_menus">
@@ -67,7 +67,6 @@
 </body>
 <script>
     init();
-    $('.header').style.backgroundImage = baseUrl+'src/res/drawable/header_bg.png';
     const vue = new Vue({
         el: '#app',
         data: {
