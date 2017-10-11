@@ -153,7 +153,9 @@
                 for (var k = 0; k < content.length;k++){
                     content[k].style.backgroundColor = '#fff'
                 }
-                $('.content img').style.maxWidth = (innerWidth*0.75)+'px';
+                const value = innerWidth*0.75;
+                console.log(value);
+                $('.content img').style.maxWidth = value+'px';
             },
             getQueryString: function(name) {
 
