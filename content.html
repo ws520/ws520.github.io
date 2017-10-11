@@ -157,9 +157,7 @@
     vue.username = "Thanatos";
     console.log(vue.username);
     const api = Base.decode(vue.getQueryString('api'));
-    if (api === undefined || api === null || api.length === 0){
-        location.href = baseUrl+'404.html';
-    }
+    console.log(api);
     vue.fatchData(api);
 
 </script>
