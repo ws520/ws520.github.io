@@ -47,13 +47,15 @@
             <img src="src/res/drawable/me.png" @click="goMe"/>
         </div>
     </div>
-    <div class="content" id="text">
-        <div class="demo-spin-container" v-if="showloading">
-            <Spin size="large" fix></Spin>
-        </div>
-        <div class="topline"></div>
+    <canvas id="canvas">
+        <div class="content" id="text">
+            <div class="demo-spin-container" v-if="showloading">
+                <Spin size="large" fix></Spin>
+            </div>
+            <div class="topline"></div>
 
-    </div>
+        </div>
+    </canvas>
     <div class="layout-copy">
         Copyright &copy; 2017-2018 &nbsp; &nbsp; 陕ICP备17003857号
     </div>

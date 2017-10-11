@@ -240,3 +240,6 @@
 .content code{
     background-color: #EAEAEA;
 }
+.canvas{
+    width: 100%;
+}
