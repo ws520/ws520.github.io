@@ -64,7 +64,8 @@
 
 </body>
 <script>
-    const baseurl = 'http://localhost:8080/blog';
+    const text = 'http://www.waws.top/src/assets/stroll.md';
+    const info = 'http://www.waws.top/src/assets/aboutinfo.txt';
     const vue = new Vue({
         el: '#app',
         data: {
@@ -80,7 +81,7 @@
             //获取md文本
 
             fatchData: function() {
-                axios.create({baseURL: baseurl}).get('/src/assets/stroll.md')
+                axios.create({baseURL: text}).get('')
                     .then(function(response){
                         this.showloading = false;
                         this.content = response.data;
@@ -89,9 +90,9 @@
                             marked(response.data);
                         vue.codelight();
                     });
-
+                
                 //获取关于信息
-                axios.create({baseURL: baseurl}).get('/src/assets/aboutinfo.txt')
+                axios.create({baseURL: info}).get('')
                     .then(function (response) {
                         vue.aboutinfo = response.data;
                     });
