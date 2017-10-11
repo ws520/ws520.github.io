@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>博客</title>
+    <link rel="icon" href="src/res/drawable/icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <!-- 引入Vue -->
     <script src="//vuejs.org/js/vue.min.js"></script>
@@ -19,6 +20,7 @@
     <link rel="stylesheet" href="src/res/css/xcode.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <script src="src/res/util.js"></script>
 </head>
 <body>
 
@@ -64,8 +66,6 @@
 
 </body>
 <script>
-    const text = 'http://www.waws.top/src/assets/stroll.md';
-    const info = 'http://www.waws.top/src/assets/aboutinfo.txt';
     const vue = new Vue({
         el: '#app',
         data: {
@@ -74,14 +74,14 @@
             aboutinfo: '',
             githubUrl: 'https://github.com/ws520',
             csdnUrl: 'http://blog.csdn.net/qq_16070781',
-            meUrl: 'https://www.baidu.com',
+            meUrl: baseUrl+'me.html',
             content: ''
         },
         methods: {
             //获取md文本
 
-            fatchData: function() {
-                axios.create({baseURL: text}).get('')
+            fatchData: function(api) {
+                axios.create({baseURL: baseUrl}).get('src/assets/'+api)
                     .then(function(response){
                         this.showloading = false;
                         this.content = response.data;
@@ -89,10 +89,12 @@
                         document.getElementById('text').innerHTML =
                             marked(response.data);
                         vue.codelight();
+                    }).catch(function () {
+                    location.href = baseUrl+'404.html';
                     });
                 
                 //获取关于信息
-                axios.create({baseURL: info}).get('')
+                axios.create({baseURL: baseUrl}).get('src/assets/aboutinfo.txt')
                     .then(function (response) {
                         vue.aboutinfo = response.data;
                     });
@@ -102,7 +104,7 @@
                 location.href = 'index.html'
             },
             about: function() {
-                this.Modal.info({
+                this.$Modal.info({
                     title: '关于',
                     content: this.aboutinfo
                 });
@@ -155,14 +157,10 @@
     vue.username = "Thanatos";
     console.log(vue.username);
     const api = Base.decode(vue.getQueryString('api'));
-    vue.fatchData();
+    if (api === undefined || api === null || api.length === 0){
+        location.href = baseUrl+'404.html';
+    }
+    vue.fatchData(api);
 
-    //添加自定义指令
-    Vue.directive('highlight',function (el) {
-        var blocks = el.querySelectorAll('pre code');
-        blocks.forEach(function(block){
-            hljs.highlightBlock(block)
-        });
-    });
 </script>
 </html>
