@@ -102,12 +102,10 @@
                 }
             }
         });
-        const textlist = 'http://www.waws.top/src/assets/data.json';
-        const info = 'http://www.waws.top/src/assets/aboutinfo.txt';
         fatchData();
         function fatchData() {
             //获取文章列表信息
-            axios.create({baseURL: textlist}).get('')
+            axios.create({baseURL: baseUrl}).get('src/assets/data.json')
                 .then(function (response) {
                     console.log(response.data);
                     vue.showloading = false;
@@ -122,7 +120,7 @@
             });
 
             //获取关于信息
-            axios.create({baseURL: info}).get('')
+            axios.create({baseURL: baseUrl}).get('src/assets/aboutinfo.txt')
                 .then(function (response) {
                     vue.showloading = false;
                     vue.aboutinfo = response.data;
