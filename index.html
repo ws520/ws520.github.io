@@ -30,17 +30,20 @@
         <div class="header" style="background-image: image('/src/res/drawable/header_bg.png')">
             努力做一名合格的程序员
         </div>
-        <div class="float_menus">
-            <div class="menu_item">
-                <img src="src/res/drawable/github.png" @click="goGitHub"/>
+        <Affix :offset-top="60">
+            <div class="float_menus">
+                <div class="menu_item">
+                    <img src="src/res/drawable/github.png" @click="goGitHub"/>
+                </div>
+                <div class="menu_item">
+                    <img src="src/res/drawable/CSDN.png" @click="goCSDN"/>
+                </div>
+                <div class="menu_item">
+                    <img src="src/res/drawable/me.png" @click="goMe"/>
+                </div>
             </div>
-            <div class="menu_item">
-                <img src="src/res/drawable/CSDN.png" @click="goCSDN"/>
-            </div>
-            <div class="menu_item">
-                <img src="src/res/drawable/me.png" @click="goMe"/>
-            </div>
-        </div>
+        </Affix>
+
         <div class="content">
             <div class="demo-spin-container" v-if="showloading">
                 <Spin size="large" fix></Spin>
