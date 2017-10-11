@@ -78,6 +78,10 @@
             },
             created: function () {
                 this.fatchData();
+                this.$Message.config({
+                    top: innerHeight-100,
+                    duration: 3
+                });
             },
             methods: {
                 about: function () {
@@ -97,7 +101,7 @@
                 },
                 itemClick: function(api){
                     console.log(api);
-                    this.$Message.info('加载完成！');
+                    this.$Message.info(api);
                     const a = Base.encode(api);
                     location.href = 'content.html?api='+a;
                 },

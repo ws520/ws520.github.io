@@ -78,6 +78,10 @@
             content: ''
         },
         created: function () {
+            this.$Message.config({
+                top: innerHeight-100,
+                duration: 3
+            });
             const rendererMD = new marked.Renderer();
             marked.setOptions({
                 renderer: rendererMD,
