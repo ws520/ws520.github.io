@@ -74,7 +74,7 @@
                 aboutinfo: '',
                 githubUrl: 'https://github.com/ws520',
                 csdnUrl: 'http://blog.csdn.net/qq_16070781',
-                meUrl: 'https://www.baidu.com',
+                meUrl: '',
                 data: ''
             },
             created: function () {
@@ -98,7 +98,11 @@
                     location.href = this.csdnUrl;
                 },
                 goMe: function () {
-                    location.href = this.meUrl;
+                    //location.href = this.meUrl;
+                    this.$Modal.info({
+                        title: '关于',
+                        content: '开发中...'
+                    });
                 },
                 itemClick: function(api){
                     console.log(api);

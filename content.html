@@ -74,7 +74,7 @@
             aboutinfo: '',
             githubUrl: 'https://github.com/ws520',
             csdnUrl: 'http://blog.csdn.net/qq_16070781',
-            meUrl: baseUrl+'me.html',
+            meUrl: '',
             content: ''
         },
         created: function () {
@@ -132,7 +132,11 @@
                 location.href = this.csdnUrl;
             },
             goMe: function() {
-                location.href = this.meUrl;
+                //location.href = this.meUrl;
+                this.$Modal.info({
+                    title: '关于',
+                    content: '开发中...'
+                });
             },
             codelight: function() {
                 //代码高亮
