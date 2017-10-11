@@ -70,13 +70,14 @@
             data: {
                 showloading: false,
                 username: 'Thanatos',
-                aboutinfo: '',
+                aboutinfo: '大家好！\n我是Thanatos。有任何事情请联系lxf523928638@outlook.com。\n鸣谢：\n本博客使用了axios、vue、iview、marked.js等技术。',
                 githubUrl: 'https://github.com/ws520',
                 csdnUrl: 'http://blog.csdn.net/qq_16070781',
                 meUrl: 'https://www.baidu.com',
                 data: ''
             },
             created: function () {
+                this.fatchData();
             },
             methods: {
                 about: function () {
@@ -99,35 +100,33 @@
                     this.$Message.info('加载完成！');
                     const a = Base.encode(api);
                     location.href = 'content.html?api='+a;
+                },
+                fatchData: function() {
+                    //获取文章列表信息
+                    axios.create({baseURL: baseUrl}).get('src/assets/data.json')
+                        .then(function (response) {
+                            vue.showloading = false;
+                            const info = response.data;
+                            if (info.code === 100) {
+                                vue.data = info.data;
+                            } else {
+                                //TODO:404
+                            }
+                        }).catch(function () {
+                        vue.showloading = false;
+                    });
+
+                    //获取关于信息
+                    axios.create({baseURL: baseUrl}).get('src/assets/aboutinfo.txt')
+                        .then(function (response) {
+                            vue.showloading = false;
+                            vue.aboutinfo = response.data;
+                        }).then(function () {
+                        vue.showloading = false;
+                    });
                 }
             }
         });
-        fatchData();
-        function fatchData() {
-            //获取文章列表信息
-            axios.create({baseURL: baseUrl}).get('src/assets/data.json')
-                .then(function (response) {
-                    console.log(response.data);
-                    vue.showloading = false;
-                    const info = response.data;
-                    if (info.code === 100) {
-                        vue.data = info.data;
-                    } else {
-                        //TODO:404
-                    }
-                }).catch(function () {
-                vue.showloading = false;
-            });
-
-            //获取关于信息
-            axios.create({baseURL: baseUrl}).get('src/assets/aboutinfo.txt')
-                .then(function (response) {
-                    vue.showloading = false;
-                    vue.aboutinfo = response.data;
-                }).then(function () {
-                vue.showloading = false;
-            });
-        }
     </script>
 
 </body>
