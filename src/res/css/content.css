@@ -139,6 +139,7 @@
         padding-bottom: 30px;
         min-height: 500px;
         font-size: 16px;
+        line-height: 30px;
         background-color: #FFF;
 
     }
@@ -181,6 +182,7 @@
         margin-left: 10%;
         padding-bottom: 30px;
         font-size: 16px;
+        line-height: 30px;
         min-height: 500px;
         background-color: #FFF;
 
@@ -222,6 +224,7 @@
         margin-left: 10%;
         padding-bottom: 30px;
         font-size: 16px;
+        line-height: 30px;
         min-height: 500px;
         background-color: #FFF;
     }
