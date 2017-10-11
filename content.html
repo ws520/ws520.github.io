@@ -66,6 +66,8 @@
 
 </body>
 <script>
+    init();
+    $('.header').style.backgroundImage = baseUrl+'src/res/drawable/header_bg.png';
     const vue = new Vue({
         el: '#app',
         data: {
@@ -79,9 +81,7 @@
         },
         methods: {
             //获取md文本
-
             fatchData: function(api) {
-                $('.header').style.backgroundImage = baseUrl+'src/res/drawable/header_bg.png';
                 axios.create({baseURL: baseUrl}).get('src/assets/'+api)
                     .then(function(response){
                         this.showloading = false;
