@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="548510f4-a32a-48ce-a174-0873a9eec546" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content.html" afterPath="$PROJECT_DIR$/content.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/res/css/index.css" afterPath="$PROJECT_DIR$/src/res/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/res/css/content.css" afterPath="$PROJECT_DIR$/src/res/css/content.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,8 +25,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/res/css/index.css">
+      <file leaf-file-name="content.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/res/css/content.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="50">
               <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
@@ -127,6 +126,7 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/content.html" />
         <option value="$PROJECT_DIR$/src/res/css/index.css" />
+        <option value="$PROJECT_DIR$/src/res/css/content.css" />
       </list>
     </option>
   </component>
@@ -362,12 +362,12 @@
       <workItem from="1507481420179" duration="2000" />
       <workItem from="1507513924222" duration="2979000" />
       <workItem from="1507520200918" duration="18229000" />
-      <workItem from="1507694657274" duration="3451000" />
+      <workItem from="1507694657274" duration="3532000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24661000" />
+    <option name="totallyTimeSpent" value="24742000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="9" y="23" width="1400" height="812" extended-state="0" />
@@ -487,6 +487,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/res/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -497,7 +505,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/res/css/index.css">
+    <entry file="file://$PROJECT_DIR$/src/res/css/content.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
