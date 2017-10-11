@@ -1,1 +1,4 @@
-大家好！测试！！！！！！！
+大家好！
+我是Thanatos。有任何事情请联系lxf523928638@outlook.com。
+鸣谢：
+本博客使用了axios、vue、iview、marked.js等技术。
