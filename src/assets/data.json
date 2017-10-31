@@ -2,6 +2,7 @@
   "code": 100,
   "message":"加载成功",
   "data":[
+    {"type":"[原创]","title": "Router路由框架","url":"/Router.md","temp":"网上大片的路由框架实在太多了，实现的方式都大同小异，通过注解实现路由表，但是在多module开发的时候怎么合并路由表，不同的框架有着自己的解决方案。"},
     {"type":"[原创]","title": "Stroll网络访问框架","url":"/stroll.md","temp":"这是一个网络访问框架使用Kotlin语言编写，支持数据请求、图片加载、多个大文件同时下载、form表单提交图片字段文件、支持DSL写法（自带进度回调）默认支持了忽略证书的Https请求。"},
     {"type":"[原创]","title": "ThanatosEventBus","url":"/ThanatosEventBus.md","temp":"自己在使用EventBus后对知识的渴望和对其的热爱使我有了写一个自己的事件总线的冲动，当然了无论在学习什么的时候肯定还是要先了解其原理才可以。不要骂我不要脸的在展示自己写的东西。"}
   ]
